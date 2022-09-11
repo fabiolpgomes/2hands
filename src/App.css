@@ -2,6 +2,25 @@
   text-align: center;
 }
 
+.navbar {
+  height: 80px;
+  background-color: #00285A;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer {
+  height: 25px;
+  background-color: #00285A;
+  color: white;
+  text-align: center;
+  font-size: small;
+  letter-spacing: 2px;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
