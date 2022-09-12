@@ -1,17 +1,18 @@
 .App {
   text-align: center;
+  background-color: rgb(232, 138, 16);
 }
 
 .navbar {
   height: 80px;
-  background-color: #00285A;
+  background-color: #00285a;
   color: white;
   margin-bottom: 10px;
 }
 
 .footer {
   height: 25px;
-  background-color: #00285A;
+  background-color: #00285a;
   color: white;
   text-align: center;
   font-size: small;

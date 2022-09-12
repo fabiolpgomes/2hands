@@ -1,8 +1,9 @@
 import "./App.css";
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+
 import logo from "./assets/2Hands1.png";
 import Button from "react-bootstrap/Button";
+import CreateProduct from "./components/CreateProduct";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       <div className="App"></div>
 
+      <CreateProduct />
       <footer className="footer">
         Desenvolvido por Bruno Cesar e Fabio Gomes @2022
       </footer>
