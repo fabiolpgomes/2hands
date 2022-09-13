@@ -17,7 +17,7 @@ function App() {
             <img src={logo} mt-1 alt="logo" height={70} />
           </Link>
           <Link to="/createProduct">
-            <Button variant="warning">Eu Quero Vender</Button>
+            <Button variant="warning">Quero Vender</Button>
           </Link>
         </nav>
       </div>

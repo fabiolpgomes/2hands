@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
   const [imgsForm, setImagesForm] = useState({
@@ -17,6 +18,9 @@ function CreateProduct() {
     email_seller: "",
     category: "",
   });
+
+  const navigate = useNavigate();
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -24,6 +28,7 @@ function CreateProduct() {
     e.preventDefault();
     try {
       await axios.post("https://ironrest.herokuapp.com/2hands", form);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -101,7 +106,7 @@ function CreateProduct() {
           <option value="Moda e beleza">Moda e beleza</option>
         </select>
         <button type="submit" onClick={imagesHandleChange}>
-          Submit
+          Incluir
         </button>
       </form>
     </div>
