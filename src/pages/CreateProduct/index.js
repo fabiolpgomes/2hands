@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import twoHands1 from "../../assets/2Hands1.png";
 import twoHands2 from "../../assets/2Hands2.png";
 import twoHands3 from "../../assets/2Hands3.png";
@@ -22,6 +23,9 @@ function CreateProduct() {
     email_seller: "",
     category: "",
   });
+
+  const navigate = useNavigate();
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -120,7 +124,7 @@ function CreateProduct() {
           <option value="Moda e beleza">Moda e beleza</option>
         </select>
         <button type="submit" onClick={imagesHandleChange}>
-          Submit
+          Incluir
         </button>
       </form>
     </div>

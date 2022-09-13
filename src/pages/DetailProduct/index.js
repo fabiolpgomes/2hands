@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { Navigate, NavigationType, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import EditeForm from "../../components/EditForm";
@@ -41,6 +42,7 @@ function DetailProduct() {
     }
     fetchProduto();
   }, [productId]);
+
   console.log(loading);
   console.log(produto);
   const [imagemAqui, setImage] = useState();
@@ -65,6 +67,17 @@ function DetailProduct() {
   }
 
   console.log(loading);
+
+  async function handleDelete(e) {
+    e.preventDefault();
+    try {
+      await axios.delete(`https://ironrest.herokuapp.com/2hands/${productId}`);
+
+      navigate("/allProducts");
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div>
       {showForm && loading === false && (
@@ -78,6 +91,7 @@ function DetailProduct() {
       )}
       {!showForm && (
         <button onClick={() => setShowForm(!showForm)}>
+
           Editar cadastro do produto
         </button>
       )}
@@ -111,6 +125,8 @@ function DetailProduct() {
               <strong>Email do vendedor: </strong> {produto.email_seller}
             </p>
           </div>
+
+          <button onClick={handleDelete}>Deletar Produto</button>
         </div>
       )}
       <button onClick={handleDelete}>Deletar Produto</button>
