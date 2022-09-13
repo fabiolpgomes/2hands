@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,13 +8,16 @@ function AllProducts() {
   
 
 
+
   useEffect(() => {
     async function fetchComAxios() {
       try {
         const response = await axios.get(
           "https://ironrest.herokuapp.com/2hands"
         );
+
         setProduct(response.data);
+
       } catch (error) {
         console.log(error);
       }
@@ -43,6 +47,7 @@ function AllProducts() {
                 <p>
                   <strong>Categoria:</strong>
                   {product.category}
+
                 </p>
               </div>
             </Link>

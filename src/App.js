@@ -3,7 +3,8 @@ import React from "react";
 import { Navbar } from "./components/navBar";
 import { Routes, Route, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import AllProducts from "./pages/AllProducts/index";
+import AllProducts from "./pages/AllProducts";
+
 import CreateProduct from "./pages/CreateProduct";
 import HomePage from "./pages/HomePage";
 import DetailProduct from "./pages/DetailProduct";
@@ -11,6 +12,7 @@ import DetailProduct from "./pages/DetailProduct";
 function App() {
   return (
     <div className="App">
+
       <>
         <Navbar />
 

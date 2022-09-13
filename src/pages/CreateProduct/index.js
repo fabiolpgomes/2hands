@@ -1,3 +1,4 @@
+
 //Formulario para Criacao do Produto, chamdo pelo bortao Quero Vender
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,15 +8,18 @@ function CreateProduct() {
   const navigate = useNavigate();
 
   const [imageForm, setImageForm] = useState({
+
     image1: "",
     image2: "",
     image3: "",
   });
 
+ 
   const [form, setForm] = useState({
     name: "",
     description: "",
-    price: 0,
+    price: "",
+
     img_url: [],
     seller: "",
     tel_seller: "",
@@ -27,118 +31,100 @@ function CreateProduct() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       await axios.post("https://ironrest.herokuapp.com/2hands", form);
+      
 
-      navigate("/");
+     navigate("/");
+
     } catch (error) {
       console.log(error);
     }
   }
 
   function imagesHandleChange(e) {
+
+   
     setImageForm({ ...imageForm, [e.target.name]: e.target.value });
     setForm({
       ...form,
       img_url: [imageForm.image1, imageForm.image2, imageForm.image3],
+
     });
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label> Nome do Produto </label>
+
+        <label>Nome do produto</label>
+        <input name="name" value={form.name} onChange={handleChange}></input>
+        <label>Descrição do produto</label>
         <input
-          value={form.name}
-          name="name"
-          type="string"
-          onChange={handleChange}
-          required
-        />
-        <label> Descricao do Produto </label>
-        <input
-          value={form.description}
           name="description"
-          type="string"
+          value={form.description}
           onChange={handleChange}
-          required
-        />
-        <label> Preço do Produto </label>
-        <input
-          value={form.price}
-          name="price"
-          type="string"
-          onChange={handleChange}
-        />
+        ></input>
+        <label>Preço do produto</label>
+        <input name="price" value={form.price} onChange={handleChange}></input>
+
         <form>
-          <label> Insira a imagem 1 </label>
+          <label>Insira a imagem 1</label>
           <input
-            placeholder="imagem URL"
             name="image1"
-            value={imageForm.image1}
-            type="string"
+            value={imgsForm.image1}
             onChange={imagesHandleChange}
-          />
-
-          <label> Insira a imagem 2 </label>
+          ></input>
+          <label>Insira a imagem 2</label>
           <input
-            placeholder="imagem URL"
             name="image2"
-            value={imageForm.image2}
-            type="string"
+            value={imgsForm.image2}
             onChange={imagesHandleChange}
-          />
-
-          <label> Insira a imagem 3 </label>
+          ></input>
+          <label>Insira a imagem 3</label>
           <input
-            placeholder="imagem URL"
             name="image3"
-            value={imageForm.image3}
-            type="string"
+            value={imgsForm.image3}
             onChange={imagesHandleChange}
-          />
+          ></input>
         </form>
-        <label> Nome do Vendedor </label>
+
+        <label>Nome do vendedor</label>
         <input
-          value={form.seller}
           name="seller"
-          type="string"
+          value={form.seller}
           onChange={handleChange}
-          required
-        />
-        <label> Telefone de Contato </label>
+        ></input>
+        <label>Telefone do vendedor:</label>
         <input
-          value={form.tel_seller}
           name="tel_seller"
-          type="string"
+          value={form.tel_seller}
           onChange={handleChange}
-          required
-        />
-        <label> Email do Vendedor </label>
+        ></input>
+        <label>Email do vendedor:</label>
         <input
-          value={form.email_seller}
           name="email_seller"
-          type="string"
+          value={form.email_seller}
           onChange={handleChange}
-        />
-        <label> Categoria do Produto </label>
+        ></input>
+        <label>Tipo de produto</label>
         <select name="category" onChange={handleChange} required>
-          <option value="Autos e peças">Autos e peças</option>
-          <option value="Para Casa">Para Casa</option>
-          <option value="Eletronicos e Celulares">
-            Eletronicos e Celulares
+          <option value="Autos e pecas">Autos e pecas</option>
+          <option value="Para casa">Para casa</option>
+          <option value="Eletronicos e celulares">
+            Eletronicos e celulares
           </option>
-          <option value="Esporte e Lazer">Esporte e Lazer</option>
-          <option value="Moda e Beleza">Moda e Beleza</option>
+          <option value="Esporte e lazer">Esporte e lazer</option>
+          <option value="Moda e beleza">Moda e beleza</option>
         </select>
-        <button
-          className="btn btn-warning mt-3"
-          type="submit"
-          onClick={imagesHandleChange}
-        >
-          Incluir Produto a Venda!
+        <button type="submit" onClick={imagesHandleChange}>
+          Submit
+
+          
+
         </button>
       </form>
     </div>

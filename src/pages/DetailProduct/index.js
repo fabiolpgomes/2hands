@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function DetailProduct() {
@@ -10,72 +10,81 @@ function DetailProduct() {
   useEffect(() => {
     async function fetchProduct() {
       setIsLoading(true);
+
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/2hands/${productId}`
         );
-        setProduct(response.data);
-        setIsLoading(false);
+
+        console.log(response.data);
+        setProduto(response.data);
+        console.log(loading);
+        setLoading(false);
+
       } catch (error) {
         console.log(error);
       }
     }
-    fetchProduct();
+
+   fetchProduct();
+    setImage(product.img_url[0]);
   }, [productId]);
 
   console.log(product);
-
+  
   const [indexImage, setIndex] = useState(0);
-  function changeIndex(e) {
-    if (indexImage === 2) {
-      setIndex(0);
+  const [indexImagem, setIndexImagem] = useState(0);
+  
+  if (indexImagem === 2) {
+      setIndexImagem(0);
+      setImage(product.img_url[indexImagem]);
     } else {
-      setIndex(indexImage + 1);
-
+      setIndexImagem(indexImagem + 1);
+      setImage(product.img_url[indexImagem]);
     }
   }
-  let imageRender = product.img_url[indexImage];
-
+  
+  console.log(loading);
+  
+  
   return (
     <div>
-    {!isLoading && (
-      <img
-        style={{ height: "130px" }}
-        src={imageRender}
-        onClick={changeIndex}
-        alt="foto"
-      />
-      <p>
-        <strong>{product.name}</strong>
-      </p>
-      <p>
-        <strong>Descrição:</strong>
-      </p>
-      <p>
-        <strong>{product.description}</strong>
-      </p>
-      <p>
-        <strong>Preço:</strong> {product.price} R$
-      </p>
-      <div>
-        <p>
-          <strong>Vendedor: </strong>
-          {product.price}
-        </p>
-        <p>
-          <strong>Telefone do vendedor: </strong>
-          {product.tel_seller}
-        </p>
-        <p>
-          <strong>Email do vendedor: </strong>
-          {product.email_seller}
-        </p>
-      </div>
-    )}
+      {loading === false && (
+        <div>
+          <img
+            style={{ height: "200px" }}
+            src={imageRender}
+            onClick={handleChangeIndex}
+          />
+
+          <p>
+            <strong>{product.name}</strong>
+          </p>
+          <p>
+            <strong>Descrição:</strong>
+          </p>
+          <p>{product.description}</p>
+          <p>
+            <strong>Preço: </strong> {product.price} R$
+          </p>
+          <div>
+            <p>
+              <strong>Vendedor: </strong>
+              {product.seller}
+            </p>
+
+            <p>
+              <strong>Telefone do vendedor: </strong> {product.tel_seller}
+            </p>
+            <p>
+              <strong>Email do vendedor: </strong> {product.email_seller}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
-    
-   
   );
 }
 
+     
 export default DetailProduct;
