@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
 function DetailProduct() {
   const { productId } = useParams();
   const [produto, setProduto] = useState({});
@@ -21,14 +20,12 @@ function DetailProduct() {
         console.log(error);
       }
     }
-
     fetchProduto();
   }, []);
   console.log(loading);
   console.log(produto);
   const [imagemAqui, setImage] = useState();
   const [indexImagem, setIndexImagem] = useState(1);
-
   function handleChangeIndex(e) {
     if (indexImagem === 2) {
       setIndexImagem(0);
@@ -38,7 +35,6 @@ function DetailProduct() {
       setImage(produto.img_url[indexImagem]);
     }
   }
-
   console.log(loading);
   return (
     <div>
@@ -49,7 +45,6 @@ function DetailProduct() {
             src={imagemAqui}
             onClick={handleChangeIndex}
           />
-
           <p>
             <strong>{produto.name}</strong>
           </p>

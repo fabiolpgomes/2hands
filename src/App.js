@@ -27,7 +27,6 @@ function App() {
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/allProducts/:productId" element={<DetailProduct />} />
       </Routes>
-
       <footer className="footer">
         Desenvolvido por Bruno Apostolo e Fabio Gomes @2022
       </footer>
