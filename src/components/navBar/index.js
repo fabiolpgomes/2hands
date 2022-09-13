@@ -7,9 +7,15 @@ export function Navbar() {
   return (
     <>
       <nav className={styles.navbar2}>
-        <img src={logo} alt="logo" style={{ margin: "20px", width: "80px" }} />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            style={{ margin: "20px", width: "80px" }}
+          />
+        </Link>
         <Link to="/CreateProduct">
-          <Button variant="warning">Eu Quero Vender</Button>
+          <Button variant="warning">Quero Vender</Button>
         </Link>
       </nav>
     </>
