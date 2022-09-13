@@ -1,65 +1,45 @@
-
-//Formulario para Criacao do Produto, chamdo pelo bortao Quero Vender
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
-  const navigate = useNavigate();
-
-  const [imageForm, setImageForm] = useState({
-
+  const [imgsForm, setImagesForm] = useState({
     image1: "",
     image2: "",
     image3: "",
   });
-
- 
   const [form, setForm] = useState({
     name: "",
     description: "",
     price: "",
-
     img_url: [],
     seller: "",
     tel_seller: "",
     email_seller: "",
     category: "",
   });
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
-
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       await axios.post("https://ironrest.herokuapp.com/2hands", form);
-      
-
-     navigate("/");
-
     } catch (error) {
       console.log(error);
     }
   }
 
   function imagesHandleChange(e) {
-
-   
-    setImageForm({ ...imageForm, [e.target.name]: e.target.value });
+    setImagesForm({ ...imgsForm, [e.target.name]: e.target.value });
     setForm({
       ...form,
-      img_url: [imageForm.image1, imageForm.image2, imageForm.image3],
-
+      img_url: [imgsForm.image1, imgsForm.image2, imgsForm.image3],
     });
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-
         <label>Nome do produto</label>
         <input name="name" value={form.name} onChange={handleChange}></input>
         <label>Descrição do produto</label>
@@ -122,9 +102,6 @@ function CreateProduct() {
         </select>
         <button type="submit" onClick={imagesHandleChange}>
           Submit
-
-          
-
         </button>
       </form>
     </div>
