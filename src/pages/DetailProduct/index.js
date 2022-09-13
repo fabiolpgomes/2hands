@@ -6,17 +6,16 @@ function DetailProduct() {
   const { productId } = useParams();
   const [produto, setProduto] = useState({});
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     async function fetchProduto() {
-      setLoading(true);
       try {
+        setLoading(true);
         const response = await axios.get(
           `https://ironrest.herokuapp.com/2hands/${productId}`
         );
         console.log(response.data);
         setProduto(response.data);
-        console.log(loading);
+        setImage(response.data.img_url[0]);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -24,12 +23,11 @@ function DetailProduct() {
     }
 
     fetchProduto();
-    setImage(produto.img_url[0]);
-  }, [productId]);
-
+  }, []);
+  console.log(loading);
   console.log(produto);
   const [imagemAqui, setImage] = useState();
-  const [indexImagem, setIndexImagem] = useState(0);
+  const [indexImagem, setIndexImagem] = useState(1);
 
   function handleChangeIndex(e) {
     if (indexImagem === 2) {
