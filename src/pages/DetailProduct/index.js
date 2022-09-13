@@ -5,61 +5,78 @@ import { useParams } from "react-router-dom";
 function DetailProduct() {
   const { productId } = useParams();
   const [produto, setProduto] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProduto() {
+      setLoading(true);
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/2hands/${productId}`
         );
+        console.log(response.data);
         setProduto(response.data);
+        console.log(loading);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
     }
+
     fetchProduto();
-  }, []);
+    setImage(produto.img_url[0]);
+  }, [productId]);
+
   console.log(produto);
-  const [indexImage, setIndexTo] = useState(0);
-  function changeIndex(e) {
-    if (indexImage === 2) {
-      setIndexTo(0);
+  const [imagemAqui, setImage] = useState();
+  const [indexImagem, setIndexImagem] = useState(0);
+
+  function handleChangeIndex(e) {
+    if (indexImagem === 2) {
+      setIndexImagem(0);
+      setImage(produto.img_url[indexImagem]);
     } else {
-      setIndexTo(indexImage + 1);
+      setIndexImagem(indexImagem + 1);
+      setImage(produto.img_url[indexImagem]);
     }
   }
-  let imagemRenderizada = produto.img_url[indexImage];
 
+  console.log(loading);
   return (
     <div>
-      <img
-        style={{ height: "130px" }}
-        src={imagemRenderizada}
-        onClick={changeIndex}
-      />
-      <p>
-        <strong>{produto.name}</strong>
-      </p>
-      <p>
-        <strong>Descrição:</strong>
-      </p>
-      <p>{produto.description}</p>
-      <p>
-        <strong>Preço: </strong> {produto.price} R$
-      </p>
-      <div>
-        <p>
-          <strong>Vendedor: </strong>
-          {produto.seller}
-        </p>
+      {loading === false && (
+        <div>
+          <img
+            style={{ height: "200px" }}
+            src={imagemAqui}
+            onClick={handleChangeIndex}
+          />
 
-        <p>
-          <strong>Telefone do vendedor: </strong> {produto.tel_seller}
-        </p>
-        <p>
-          <strong>Email do vendedor: </strong> {produto.email_seller}
-        </p>
-      </div>
+          <p>
+            <strong>{produto.name}</strong>
+          </p>
+          <p>
+            <strong>Descrição:</strong>
+          </p>
+          <p>{produto.description}</p>
+          <p>
+            <strong>Preço: </strong> {produto.price} R$
+          </p>
+          <div>
+            <p>
+              <strong>Vendedor: </strong>
+              {produto.seller}
+            </p>
+
+            <p>
+              <strong>Telefone do vendedor: </strong> {produto.tel_seller}
+            </p>
+            <p>
+              <strong>Email do vendedor: </strong> {produto.email_seller}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
