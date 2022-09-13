@@ -1,8 +1,11 @@
 //Formulario para Criacao do Produto, chamdo pelo bortao Quero Vender
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
+  const navigate = useNavigate();
+
   const [imageForm, setImageForm] = useState({
     image1: "",
     image2: "",
@@ -28,6 +31,8 @@ function CreateProduct() {
     e.preventDefault();
     try {
       await axios.post("https://ironrest.herokuapp.com/2hands", form);
+
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +65,6 @@ function CreateProduct() {
           onChange={handleChange}
           required
         />
-
         <label> Preço do Produto </label>
         <input
           value={form.price}
@@ -68,7 +72,6 @@ function CreateProduct() {
           type="string"
           onChange={handleChange}
         />
-
         <form>
           <label> Insira a imagem 1 </label>
           <input
@@ -97,7 +100,6 @@ function CreateProduct() {
             onChange={imagesHandleChange}
           />
         </form>
-
         <label> Nome do Vendedor </label>
         <input
           value={form.seller}
@@ -106,7 +108,6 @@ function CreateProduct() {
           onChange={handleChange}
           required
         />
-
         <label> Telefone de Contato </label>
         <input
           value={form.tel_seller}
@@ -115,7 +116,6 @@ function CreateProduct() {
           onChange={handleChange}
           required
         />
-
         <label> Email do Vendedor </label>
         <input
           value={form.email_seller}
@@ -123,7 +123,6 @@ function CreateProduct() {
           type="string"
           onChange={handleChange}
         />
-
         <label> Categoria do Produto </label>
         <select name="category" onChange={handleChange} required>
           <option value="Autos e peças">Autos e peças</option>
@@ -134,7 +133,6 @@ function CreateProduct() {
           <option value="Esporte e Lazer">Esporte e Lazer</option>
           <option value="Moda e Beleza">Moda e Beleza</option>
         </select>
-
         <button
           className="btn btn-warning mt-3"
           type="submit"
