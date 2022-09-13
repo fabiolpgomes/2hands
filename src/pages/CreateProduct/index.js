@@ -24,8 +24,6 @@ function CreateProduct() {
     category: "",
   });
 
-  const navigate = useNavigate();
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
