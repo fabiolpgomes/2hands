@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function AllProducts() {
-  const [product, setProduct] = useState([]);
+        const [product, setProduct] = useState([]);
   
 
 
