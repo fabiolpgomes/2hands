@@ -1,53 +1,50 @@
 import axios from "axios";
-
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function AllProducts() {
+<<<<<<< HEAD
         const [product, setProduct] = useState([]);
   
 
 
 
+=======
+  const [itemsParaVenda, setItems2hands] = useState([]);
+>>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
   useEffect(() => {
     async function fetchComAxios() {
       try {
         const response = await axios.get(
           "https://ironrest.herokuapp.com/2hands"
         );
-
-        setProduct(response.data);
-
+        setItems2hands(response.data);
       } catch (error) {
         console.log(error);
       }
     }
-
     fetchComAxios();
   }, []);
-  console.log(product);
+  console.log(itemsParaVenda);
 
   return (
     <>
-      {product.map((product) => {
+      {itemsParaVenda.map((item) => {
         return (
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <Link to={`/allProduct/${product._id}`}>
+          <div
+            style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+          >
+            <Link to={`/allProducts/${item._id}`}>
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <img
-                  style={{ width: "20vh" }}
-                  src={product.img_ulr[0]}
-                  alt="logo"
-                />
-                <h4>{product.name}</h4>
+                <img style={{ width: "20vh" }} src={item.img_url[0]} />
+                <h4>{item.name}</h4>
                 <p>
-                  <strong>Preço:</strong>
-                  {product.price}
+                  <strong>Preço: </strong>
+                  {item.price}
                 </p>
                 <p>
-                  <strong>Categoria:</strong>
-                  {product.category}
-
+                  <strong>Categoria: </strong>
+                  {item.category}
                 </p>
               </div>
             </Link>

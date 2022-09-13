@@ -20,12 +20,20 @@ function DetailProduct() {
         console.log(error);
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
     fetchProduto();
   }, []);
   console.log(loading);
   console.log(produto);
   const [imagemAqui, setImage] = useState();
   const [indexImagem, setIndexImagem] = useState(1);
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
   function handleChangeIndex(e) {
     if (indexImagem === 2) {
       setIndexImagem(0);
@@ -35,6 +43,10 @@ function DetailProduct() {
       setImage(produto.img_url[indexImagem]);
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
   console.log(loading);
   return (
     <div>
@@ -59,11 +71,20 @@ function DetailProduct() {
             <p>
               <strong>Vendedor: </strong>
               {produto.seller}
+<<<<<<< HEAD
             </p>
             <p>
               <strong>Telefone do vendedor: </strong> {produto.tel_seller}
             </p>
             <p>
+=======
+            </p>
+
+            <p>
+              <strong>Telefone do vendedor: </strong> {produto.tel_seller}
+            </p>
+            <p>
+>>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
               <strong>Email do vendedor: </strong> {produto.email_seller}
             </p>
           </div>
