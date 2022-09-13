@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import twoHands1 from "../../assets/2Hands1.png";
 import twoHands2 from "../../assets/2Hands2.png";
 import twoHands3 from "../../assets/2Hands3.png";
+import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
+  const navigate = useNavigate();
   const [imgsForm, setImagesForm] = useState({
     image1: "",
     image2: "",
@@ -39,6 +41,7 @@ function CreateProduct() {
     if (clone.img_url[2] === "") {
       clone.img_url[2] = twoHands3;
     }
+
     try {
       await axios.post("https://ironrest.herokuapp.com/2hands", form);
       navigate("/allProducts");
@@ -55,6 +58,8 @@ function CreateProduct() {
     });
   }
 
+  console.log(form);
+  console.log(imgsForm);
   return (
     <div>
       <form onSubmit={handleSubmit}>

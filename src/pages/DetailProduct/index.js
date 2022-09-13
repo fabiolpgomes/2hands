@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
+import { Navigate, NavigationType, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import EditeForm from "../../components/EditForm";
 
@@ -8,6 +9,7 @@ function DetailProduct() {
   const { productId } = useParams();
   const [produto, setProduto] = useState({});
   const [loading, setLoading] = useState(true);
+
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -32,6 +34,7 @@ function DetailProduct() {
         setProduto(response.data);
         setImage(response.data.img_url[0]);
         setForm(response.data);
+
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -53,6 +56,16 @@ function DetailProduct() {
       setImage(produto.img_url[indexImagem]);
     }
   }
+  async function handleDelete(e) {
+    e.preventDefault();
+    try {
+      await axios.delete(`https://ironrest.herokuapp.com/2hands/${productId}`);
+      navigate("/allProducts");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   console.log(loading);
 
   async function handleDelete(e) {
@@ -78,10 +91,10 @@ function DetailProduct() {
       )}
       {!showForm && (
         <button onClick={() => setShowForm(!showForm)}>
-          Editar cadatro do produto
+
+          Editar cadastro do produto
         </button>
       )}
-
       {loading === false && (
         <div>
           <img
@@ -116,6 +129,7 @@ function DetailProduct() {
           <button onClick={handleDelete}>Deletar Produto</button>
         </div>
       )}
+      <button onClick={handleDelete}>Deletar Produto</button>
     </div>
   );
 }
