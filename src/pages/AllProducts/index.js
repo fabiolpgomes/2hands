@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 function AllProducts() {
   const [product, setProduct] = useState([]);
+  
+
 
   useEffect(() => {
     async function fetchComAxios() {

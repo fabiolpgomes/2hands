@@ -5,14 +5,17 @@ import { useParams } from "react-router-dom";
 function DetailProduct() {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProduct() {
+      setIsLoading(true);
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/2hands/${productId}`
         );
         setProduct(response.data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -28,12 +31,14 @@ function DetailProduct() {
       setIndex(0);
     } else {
       setIndex(indexImage + 1);
+
     }
   }
   let imageRender = product.img_url[indexImage];
 
   return (
     <div>
+    {!isLoading && (
       <img
         style={{ height: "130px" }}
         src={imageRender}
@@ -66,7 +71,10 @@ function DetailProduct() {
           {product.email_seller}
         </p>
       </div>
+    )}
     </div>
+    
+   
   );
 }
 

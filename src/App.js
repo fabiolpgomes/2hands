@@ -22,6 +22,7 @@ function App() {
           <Route path="/allProducts/:productId" element={<DetailProduct />} />
         </Routes>
 
+      <AllProducts />
         <footer className="footer">
           Desenvolvido por Bruno Apostolo e Fabio Gomes @2022
         </footer>
