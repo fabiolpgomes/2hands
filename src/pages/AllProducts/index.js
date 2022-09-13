@@ -3,15 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function AllProducts() {
-<<<<<<< HEAD
-        const [product, setProduct] = useState([]);
-  
-
-
-
-=======
   const [itemsParaVenda, setItems2hands] = useState([]);
->>>>>>> cbc20ce5fe2863679d3768697c435ee8913e3fee
   useEffect(() => {
     async function fetchComAxios() {
       try {
