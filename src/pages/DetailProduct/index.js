@@ -4,75 +4,80 @@ import { useParams } from "react-router-dom";
 
 function DetailProduct() {
   const { productId } = useParams();
-  const [produto, setProduto] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchProduto() {
-      setLoading(true);
+    async function fetchProduct() {
+      setIsLoading(true);
+
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/2hands/${productId}`
         );
+
         console.log(response.data);
         setProduto(response.data);
         console.log(loading);
         setLoading(false);
+
       } catch (error) {
         console.log(error);
       }
     }
 
-    fetchProduto();
-    setImage(produto.img_url[0]);
+   fetchProduct();
+    setImage(product.img_url[0]);
   }, [productId]);
 
-  console.log(produto);
-  const [imagemAqui, setImage] = useState();
+  console.log(product);
+  
+  const [indexImage, setIndex] = useState(0);
   const [indexImagem, setIndexImagem] = useState(0);
-
-  function handleChangeIndex(e) {
-    if (indexImagem === 2) {
+  
+  if (indexImagem === 2) {
       setIndexImagem(0);
-      setImage(produto.img_url[indexImagem]);
+      setImage(product.img_url[indexImagem]);
     } else {
       setIndexImagem(indexImagem + 1);
-      setImage(produto.img_url[indexImagem]);
+      setImage(product.img_url[indexImagem]);
     }
   }
-
+  
   console.log(loading);
+  
+  
   return (
     <div>
       {loading === false && (
         <div>
           <img
             style={{ height: "200px" }}
-            src={imagemAqui}
+            src={imageRender}
             onClick={handleChangeIndex}
           />
 
           <p>
-            <strong>{produto.name}</strong>
+            <strong>{product.name}</strong>
           </p>
           <p>
             <strong>Descrição:</strong>
           </p>
-          <p>{produto.description}</p>
+          <p>{product.description}</p>
           <p>
-            <strong>Preço: </strong> {produto.price} R$
+            <strong>Preço: </strong> {product.price} R$
           </p>
           <div>
             <p>
               <strong>Vendedor: </strong>
-              {produto.seller}
+              {product.seller}
             </p>
 
             <p>
-              <strong>Telefone do vendedor: </strong> {produto.tel_seller}
+              <strong>Telefone do vendedor: </strong> {product.tel_seller}
             </p>
             <p>
-              <strong>Email do vendedor: </strong> {produto.email_seller}
+              <strong>Email do vendedor: </strong> {product.email_seller}
             </p>
           </div>
         </div>
@@ -80,4 +85,6 @@ function DetailProduct() {
     </div>
   );
 }
+
+     
 export default DetailProduct;
