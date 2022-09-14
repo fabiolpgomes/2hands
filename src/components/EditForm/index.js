@@ -78,9 +78,13 @@ function EditeForm({ form, setForm, productId, showForm, setShowForm }) {
           onChange={handleChange}
         ></input>
         <label>Tipo de produto: </label>
-        <select name="type" defaultValue={form.type} onChange={handleChange}>
-          <option value="Autos e pecas">Autos e pecas</option>
-          <option value="Para casa">Para casa</option>
+        <select
+          name="category"
+          defaultValue={form.category}
+          onChange={handleChange}
+        >
+          <option value="Autos e peças">Autos e pecas</option>
+          <option value="Para Casa">Para casa</option>
           <option value="Eletronicos e celulares">
             Eletronicos e celulares
           </option>
