@@ -7,7 +7,6 @@ import AllProducts from "./pages/AllProducts";
 import CreateProduct from "./pages/CreateProduct";
 import HomePage from "./pages/HomePage";
 import DetailProduct from "./pages/DetailProduct";
-import SearchBarPage from "./pages/SeachBarPage";
 
 function App() {
   return (
@@ -25,10 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/allProducts" element={<AllProducts />} />
-        <Route path="/searchBar" element={<AllProducts />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/allProducts/:productId" element={<DetailProduct />} />
-        <Route path="/searchBar/:searching" element={<SearchBarPage />} />
       </Routes>
       <footer className="footer">
         Desenvolvido por Bruno Apostolo e Fabio Gomes @2022
