@@ -91,7 +91,6 @@ function DetailProduct() {
       )}
       {!showForm && (
         <button onClick={() => setShowForm(!showForm)}>
-
           Editar cadastro do produto
         </button>
       )}
@@ -125,8 +124,6 @@ function DetailProduct() {
               <strong>Email do vendedor: </strong> {produto.email_seller}
             </p>
           </div>
-
-          <button onClick={handleDelete}>Deletar Produto</button>
         </div>
       )}
       <button onClick={handleDelete}>Deletar Produto</button>

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import twoHands1 from "../../assets/2Hands1.png";
 import twoHands2 from "../../assets/2Hands2.png";
 import twoHands3 from "../../assets/2Hands3.png";
@@ -121,7 +120,11 @@ function CreateProduct() {
           <option value="Esporte e lazer">Esporte e lazer</option>
           <option value="Moda e beleza">Moda e beleza</option>
         </select>
-        <button type="submit" onClick={imagesHandleChange}>
+        <button
+          className="btn btn-light btn-outline-dark"
+          type="submit"
+          onClick={imagesHandleChange}
+        >
           Incluir
         </button>
       </form>
