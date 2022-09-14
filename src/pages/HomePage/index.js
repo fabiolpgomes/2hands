@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
+import { Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+
+
 function HomePage() {
   const navigate = useNavigate();
   const [searchBar, setSearchBar] = useState("");
@@ -18,6 +22,7 @@ function HomePage() {
   console.log(categoria);
   return (
     <>
+
       <label>Faça sua pesquisa de produtos</label>
       <input onChange={handleChange}></input>
       <Link to={`searchBar/${searchBar}`}>
