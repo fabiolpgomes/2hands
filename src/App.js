@@ -7,11 +7,11 @@ import AllProducts from "./pages/AllProducts";
 import CreateProduct from "./pages/CreateProduct";
 import HomePage from "./pages/HomePage";
 import DetailProduct from "./pages/DetailProduct";
-import Navbar from "./components/navBar";
+import Navbar from "./components/navbar";
 
 function App() {
   return (
-    <div className="App container-lg">
+    <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

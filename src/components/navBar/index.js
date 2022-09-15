@@ -6,7 +6,7 @@ import styles from "./style.module.css";
 export function Navbar() {
   return (
     <>
-      <Row responsive="sm">
+      <Row>
         <nav className={styles.navbar2}>
           <Col className="col-3">
             <Link to="/">
