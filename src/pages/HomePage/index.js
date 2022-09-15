@@ -5,6 +5,7 @@ import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Banner from "../../components/Banner";
+import CardsCarrosel from "../../components/CardsCarrosel";
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
         <Link style={{ margin: "auto" }} to="/allProducts">
           <Button>Conferir os produtos disponíveis</Button>
         </Link>
+        <CardsCarrosel />
       </div>
     </div>
   );
