@@ -1,7 +1,7 @@
 import "./detailproduct.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { Button, Card } from "react-bootstrap";
 import { Navigate, NavigationType, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import EditeForm from "../../components/EditForm";
@@ -80,62 +80,71 @@ function DetailProduct() {
     }
   }
   return (
-    <div className="DetailProduct container-lg">
+    <div
+      style={{ marginBottom: "40px" }}
+      className="DetailProduct container-lg"
+    >
       {loading === false && (
-        <div style={{ marginTop: "90px" }}>
-          <img
-            style={{ height: "200px" }}
+        <Card style={{ marginTop: "90px" }}>
+          <Card.Img
+            style={{ width: "400px" }}
             src={imagemAqui}
             onClick={handleChangeIndex}
           />
-          <p>
-            <strong>{produto.name}</strong>
-          </p>
-          <p>
-            <strong>Descrição:</strong>
-          </p>
-          <p>{produto.description}</p>
-          <p>
-            <strong>Preço R$ </strong> {produto.price}
-          </p>
-          <div>
-            <p>
-              <strong>Vendedor: </strong>
-              {produto.seller}
-            </p>
+          <Card.Body>
+            <Card.Title>
+              <strong>{produto.name}</strong>
+            </Card.Title>
+            <Card.Text>
+              <strong>Descrição:</strong>
+            </Card.Text>
+            <Card.Text>{produto.description}</Card.Text>
+            <Card.Text>
+              <strong>Preço: </strong> R${produto.price}
+            </Card.Text>
+            <Card.Text>
+              <p>
+                <strong>Vendedor: </strong>
+                {produto.seller}
+              </p>
 
-            <p>
-              <strong>Telefone do vendedor: </strong> {produto.tel_seller}
-            </p>
-            <p>
-              <strong>Email do vendedor: </strong> {produto.email_seller}
-            </p>
+              <p>
+                <strong>Telefone do vendedor: </strong> {produto.tel_seller}
+              </p>
+              <p>
+                <strong>Email do vendedor: </strong> {produto.email_seller}
+              </p>
 
-            <p>
-              <strong>Categoria do Produtor: </strong> {produto.category}
-            </p>
-            <div>
-              <button className="delete" onClick={handleDelete}>
-                Deletar Produto
-              </button>
+              <p>
+                <strong>Categoria do Produtor: </strong> {produto.category}
+              </p>
+              <div>
+                <Button variant="danger" onClick={handleDelete}>
+                  Deletar Produto
+                </Button>
 
-              {showForm && loading === false && (
-                <EditeForm
-                  form={form}
-                  setForm={setForm}
-                  productId={productId}
-                  showForm={showForm}
-                  setShowForm={setShowForm}
-                />
-              )}
-              {!showForm && (
-                <button className="edit" onClick={() => setShowForm(!showForm)}>
-                  Editar cadastro do produto
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
+                {showForm && loading === false && (
+                  <EditeForm
+                    form={form}
+                    setForm={setForm}
+                    productId={productId}
+                    showForm={showForm}
+                    setShowForm={setShowForm}
+                  />
+                )}
+                {!showForm && (
+                  <Button
+                    className="ms-3"
+                    variant="warning"
+                    onClick={() => setShowForm(!showForm)}
+                  >
+                    Editar cadastro do produto
+                  </Button>
+                )}
+              </div>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       )}
     </div>
   );

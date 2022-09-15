@@ -1,12 +1,6 @@
 .App {
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
 .footer {
   height: 25px;
   background-color: #00285a;
@@ -122,4 +116,24 @@
 }
 .container .buttons button:first-child img {
   transform: rotate(180deg);
+}
+.item-card {
+  flex: none;
+}
+.page-all-products {
+  max-width: 40vh;
+  min-width: 40vh;
+  margin: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.page-all-products .all-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 300px;
+}
+.page-all-products .all-products .item-card {
+  display: flex;
+  width: 300px;
 }

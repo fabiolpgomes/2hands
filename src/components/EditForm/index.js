@@ -92,6 +92,7 @@ function EditeForm({
                 Categoria
               </Form.Label>
               <Form.Select name="category" onChange={handleChange} required>
+                <option value=""></option>
                 <option value="Autos e peças">Autos e peças</option>
                 <option value="Para Casa">Para Casa</option>
                 <option value="Eletronicos e celulares">
@@ -184,12 +185,21 @@ function EditeForm({
             onChange={handleChange}
           />
 
-          <button onClick={() => setShowForm(!showForm)}>
+          <Button
+            variant="secondary"
+            className="mt-4"
+            onClick={() => setShowForm(!showForm)}
+          >
             Cancelar alterações no produto
-          </button>
-          <button type="submit" onClick={handleChangeImage}>
+          </Button>
+          <Button
+            variant="success"
+            className="ms-5 mt-4"
+            type="submit"
+            onClick={handleChangeImage}
+          >
             Salvar alterações
-          </button>
+          </Button>
         </Form.Group>
       </Form>
     </div>
