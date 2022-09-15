@@ -8,7 +8,6 @@ import CreateProduct from "./pages/CreateProduct";
 import HomePage from "./pages/HomePage";
 import DetailProduct from "./pages/DetailProduct";
 import Navbar from "./components/navbar";
-
 function App() {
   return (
     <div className="App">
