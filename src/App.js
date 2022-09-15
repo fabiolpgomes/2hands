@@ -1,8 +1,6 @@
 import "./App.css";
-import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import logo from "./assets/2Hands1.png";
-import { Button } from "react-bootstrap";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import AllProducts from "./pages/AllProducts";
 import CreateProduct from "./pages/CreateProduct";
 import HomePage from "./pages/HomePage";

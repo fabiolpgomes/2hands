@@ -2,7 +2,7 @@ import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Form, Col, Row, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 function AllProducts() {

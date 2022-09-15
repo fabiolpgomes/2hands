@@ -2,7 +2,7 @@ import "./detailproduct.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { Navigate, NavigationType, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import EditeForm from "../../components/EditForm";
 
@@ -67,18 +67,6 @@ function DetailProduct() {
     }
   }
 
-  console.log(loading);
-
-  async function handleDelete(e) {
-    e.preventDefault();
-    try {
-      await axios.delete(`https://ironrest.herokuapp.com/2hands/${productId}`);
-
-      navigate("/allProducts");
-    } catch (error) {
-      console.log(error);
-    }
-  }
   return (
     <div
       style={{ marginBottom: "40px" }}
