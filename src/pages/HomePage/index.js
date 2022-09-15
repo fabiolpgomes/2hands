@@ -13,7 +13,7 @@ function HomePage() {
 
       <div style={{ marginTop: "160px", alignSelf: "center" }}>
         <Link style={{ margin: "auto" }} to="/allProducts">
-          <Button>Conferir os produtos disponíveis</Button>
+          <Button size="lg">Conferir os produtos disponíveis</Button>
         </Link>
         <CardsCarrosel />
       </div>

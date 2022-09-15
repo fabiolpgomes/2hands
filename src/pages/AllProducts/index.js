@@ -2,7 +2,7 @@ import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 function AllProducts() {
@@ -49,22 +49,43 @@ function AllProducts() {
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Button variant="success" value="" onClick={handleClick}>
+          <Button
+            className="ms-3 me-3 mt-4"
+            variant="success"
+            value=""
+            onClick={handleClick}
+          >
             Todas as categorias
           </Button>
-          <Button value="Autos e peças" onClick={handleClick}>
+          <Button
+            className="me-3 mt-4"
+            value="Autos e peças"
+            onClick={handleClick}
+          >
             Autos e peças
           </Button>
-          <Button value="Para Casa" onClick={handleClick}>
+          <Button className="me-3 mt-4" value="Para Casa" onClick={handleClick}>
             Para casa
           </Button>
-          <Button value="Eletronicos e celulares" onClick={handleClick}>
+          <Button
+            className="me-3 mt-4"
+            value="Eletronicos e celulares"
+            onClick={handleClick}
+          >
             Eletronicos e celulares
           </Button>
-          <Button value="Esporte e lazer" onClick={handleClick}>
+          <Button
+            className="me-3 mt-4"
+            value="Esporte e lazer"
+            onClick={handleClick}
+          >
             Esporte e lazer
           </Button>
-          <Button value="Moda e beleza" onClick={handleClick}>
+          <Button
+            className="me-3 mt-4"
+            value="Moda e beleza"
+            onClick={handleClick}
+          >
             Moda e beleza
           </Button>
         </div>
@@ -79,8 +100,11 @@ function AllProducts() {
             justifyContent: "center",
           }}
         >
-          <div className="page-all-products">
-            <div className="all-products">
+          <div
+            className="page-all-products"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <Row className="all-products d-flex justify-content-evenly mt-4 ">
               {itemsParaVenda
                 .filter((item) => {
                   return (
@@ -90,9 +114,16 @@ function AllProducts() {
                 })
                 .map((item) => {
                   return (
-
-
-                    <div className="item-card">
+                    <Card
+                      key={item._id}
+                      style={{
+                        height: "20rem",
+                        width: "14rem",
+                        margin: "20px",
+                        alignItems: "center",
+                      }}
+                      className="item-card"
+                    >
                       <Link to={`/allProducts/${item._id}`}>
                         <Card
                           style={{ display: "flex", flexDirection: "column" }}
@@ -112,12 +143,10 @@ function AllProducts() {
                           </Card.Text>
                         </Card>
                       </Link>
-                    </div>
-
-                    
+                    </Card>
                   );
                 })}
-            </div>
+            </Row>
           </div>
         </div>
       </div>
