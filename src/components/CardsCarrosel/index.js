@@ -29,43 +29,45 @@ function CardsCarrosel() {
   }
   console.log(itemsParaVenda);
   return (
-    <div className="container">
-      <div className="carousel" ref={carrousel}>
-        {itemsParaVenda.map((item) => {
-          return (
-            <div
-              className="card m-1 "
-              style={{ width: "20rem", height: "25rem" }}
-              key={item._id}
-            >
-              <img
-                src={item.img_url[0]}
-                alt="produto"
-                className="card-img-top"
-                style={{ minHeight: "10rem" }}
-              />
-
-              <Link
-                to={`/allProducts/${item._id}`}
-                className="text-reset text-decoration-none"
+    <div>
+      <div className="container teste" ref={carrousel}>
+        <div className="carousel teste">
+          {itemsParaVenda.map((item) => {
+            return (
+              <div
+                className="card m-1 "
+                style={{ width: "14rem", height: "25rem" }}
+                key={item._id}
               >
-                <div className="card-body">
-                  <div className="card-title">{item.name}</div>
-                  <div className="card-text text-muted">R$ {item.price}</div>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+                <img
+                  src={item.img_url[0]}
+                  alt="produto"
+                  className="card-img-top"
+                  style={{ minHeight: "9rem", minWidth: "6rem" }}
+                />
+
+                <Link
+                  to={`/allProducts/${item._id}`}
+                  className="text-reset text-decoration-none"
+                >
+                  <div className="card-body">
+                    <div className="card-title">{item.name}</div>
+                    <div className="card-text text-muted">R$ {item.price}</div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className="buttons">
-        <button onClick={hadleLeftClick}>
-          <img src={seta} alt="imagem" />
-        </button>
-        <button onClick={handleRightClick}>
-          <img src={seta} alt="imagem" />
-        </button>
-      </div>
+        <div className="buttons">
+          <button onClick={hadleLeftClick}>
+            <img src={seta} alt="imagem" />
+          </button>
+          <button onClick={handleRightClick}>
+            <img src={seta} alt="imagem" />
+          </button>
+        </div>
     </div>
   );
 }

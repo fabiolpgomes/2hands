@@ -9,7 +9,6 @@
   font-size: small;
   letter-spacing: 2px;
   overflow: hidden;
-
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -50,15 +49,21 @@
 }
 .container {
   padding: 19px;
-  width: 100vh;
   margin: 40px;
+  scroll-behavior: smooth;
+  align-items: center;
+
 }
 .container .carousel {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   overflow: auto;
-  scroll-behavior: smooth;
+ 
 }
+.buttons{
+  text-align: center;
+}
+/*  
 .container .carousel .item {
   margin-left: 3px;
   border: 2px solid black;
@@ -74,7 +79,7 @@
 }
 .container .carousel .item .image img {
   align-items: center;
-
+  
   width: 90%;
   height: 90%;
   object-fit: cover;
@@ -105,16 +110,18 @@
   font-size: 25px;
   text-justify: distribute-all-lines;
 }
+*/
 .container .buttons {
+  margin: auto;
   width: 100%;
   text-align: center;
 }
 
-.container .buttons button {
+ .buttons button {
   background-color: transparent;
   border: none;
 }
-.container .buttons button:first-child img {
+.buttons button:first-child img {
   transform: rotate(180deg);
 }
 .item-card {
@@ -136,4 +143,10 @@
 .page-all-products .all-products .item-card {
   display: flex;
   width: 300px;
+}
+
+.teste {
+  overflow: scroll;
+  overflow-y: hidden; /* Hide horizontal scrollbar */
+  overflow-x: scroll; /* Add vertical scrollbar */
 }
