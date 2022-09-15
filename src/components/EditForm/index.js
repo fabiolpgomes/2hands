@@ -52,8 +52,59 @@ function EditeForm({
   }
 
   return (
+<<<<<<< HEAD
     <div className="d-flex flex-column">
       <h3 className="text-center">Alterar o seu Produto</h3>
+=======
+    <>
+      <button onClick={() => setShowForm(!showForm)}>
+        Cancelar alterações no produto
+      </button>
+      <form onSubmit={handleSubmit}>
+        <label>Nome do produto</label>
+        <input name="name" value={form.name} onChange={handleChange}></input>
+        <label>Descrição do produto</label>
+        <input
+          name="description"
+          value={form.description}
+          onChange={handleChange}
+        ></input>
+        <label>Preço do produto</label>
+        <input name="price" value={form.price} onChange={handleChange}></input>
+        <label>Nome do vendedor</label>
+        <input
+          name="seller"
+          value={form.seller}
+          onChange={handleChange}
+        ></input>
+        <label>Telefone do vendedor</label>
+        <input
+          name="tel_seller"
+          value={form.tel_seller}
+          onChange={handleChange}
+        ></input>
+        <label>Email do vendedor:</label>
+        <input
+          name="email_seller"
+          value={form.email_seller}
+          onChange={handleChange}
+        ></input>
+        <label>Tipo de produto: </label>
+        <select
+          name="category"
+          defaultValue={form.category}
+          onChange={handleChange}
+        >
+          <option value="Autos e peças">Autos e pecas</option>
+          <option value="Para Casa">Para casa</option>
+          <option value="Eletronicos e celulares">
+            Eletronicos e celulares
+          </option>
+          <option value="Esporte e lazer">Esporte e lazer</option>
+          <option value="Moda e beleza">Moda e beleza</option>
+        </select>
+        <label>Edite a imagem 1</label>
+>>>>>>> 29f4e865d42a2611da658e0000ba0bd5489866db
 
       <Form onSubmit={handleSubmit}>
         <Row>

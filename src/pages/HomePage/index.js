@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 
 function HomePage() {
   const [searchBar, setSearchBar] = useState("");
@@ -43,8 +44,24 @@ function HomePage() {
             Moda e beleza
           </button>
         </div>
+=======
+import Button from "react-bootstrap/Button";
+import Banner from "../../components/Banner";
+import CardsCarrosel from "../../components/CardsCarrosel";
+
+function HomePage() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "80%" }}>
+      <Banner />
+
+      <div style={{ marginTop: "160px", alignSelf: "center" }}>
+        <Link style={{ margin: "auto" }} to="/allProducts">
+          <Button>Conferir os produtos disponíveis</Button>
+        </Link>
+        <CardsCarrosel />
+>>>>>>> 29f4e865d42a2611da658e0000ba0bd5489866db
       </div>
-    </>
+    </div>
   );
 }
 
