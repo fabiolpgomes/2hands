@@ -2,8 +2,16 @@ import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Form, Col, Row, Button } from "react-bootstrap";
 
-function EditeForm({ form, setForm, productId, showForm, setShowForm }) {
+function EditeForm({
+  form,
+  setForm,
+  productId,
+  showForm,
+  setShowForm,
+  imagesHandleChange,
+}) {
   const navigate = useNavigate();
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -44,73 +52,147 @@ function EditeForm({ form, setForm, productId, showForm, setShowForm }) {
   }
 
   return (
-    <>
-      <button onClick={() => setShowForm(!showForm)}>
-        Cancelar alterações no produto
-      </button>
-      <form onSubmit={handleSubmit}>
-        <label>Nome do produto</label>
-        <input name="name" value={form.name} onChange={handleChange}></input>
-        <label>Descrição do produto</label>
-        <input
-          name="description"
-          value={form.description}
-          onChange={handleChange}
-        ></input>
-        <label>Preço do produto</label>
-        <input name="price" value={form.price} onChange={handleChange}></input>
-        <label>Nome do vendedor</label>
-        <input
-          name="seller"
-          value={form.seller}
-          onChange={handleChange}
-        ></input>
-        <label>Telefone do vendedor</label>
-        <input
-          name="tel_seller"
-          value={form.tel_seller}
-          onChange={handleChange}
-        ></input>
-        <label>Email do vendedor:</label>
-        <input
-          name="email_seller"
-          value={form.email_seller}
-          onChange={handleChange}
-        ></input>
-        <label>Tipo de produto: </label>
-        <select name="type" defaultValue={form.type} onChange={handleChange}>
-          <option value="Autos e pecas">Autos e pecas</option>
-          <option value="Para casa">Para casa</option>
-          <option value="Eletronicos e celulares">
-            Eletronicos e celulares
-          </option>
-          <option value="Esporte e lazer">Esporte e lazer</option>
-          <option value="Moda e beleza">Moda e beleza</option>
-        </select>
-        <label>Edite a imagem 1</label>
+    <div className="d-flex flex-column">
+      <h3 className="text-center">Alterar o seu Produto</h3>
 
-        <input
-          name="image1"
-          value={imgsForm.image1}
-          onChange={handleChangeImage}
-        ></input>
-        <label>Edite a imagem 2</label>
-        <input
-          name="image2"
-          value={imgsForm.image2}
-          onChange={handleChangeImage}
-        ></input>
-        <label>Edite a imagem 3</label>
-        <input
-          name="image3"
-          value={imgsForm.image3}
-          onChange={handleChangeImage}
-        ></input>
-        <button type="submit" onClick={handleChangeImage}>
-          Salvar alterações
-        </button>
-      </form>
-    </>
+      <Form onSubmit={handleSubmit}>
+        <Row>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Group className="mb-3" controlId="formBasicProductName">
+              <Form.Label className="text-start text-muted fs-5">
+                Nome do produto
+              </Form.Label>
+              <Form.Control
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+
+          <Col className="mb-1 col-2">
+            <Form.Group className="mb-2" controlId="formBasicProductPrice">
+              <Form.Label className="text-start text-muted fs-5">
+                Preço do produto
+              </Form.Label>
+              <Form.Control
+                name="price"
+                value={form.price}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+
+          <Col className="mb-1 col-3">
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicProductSellerEmail"
+            >
+              <Form.Label className="text-start text-muted fs-5 text-muted">
+                Categoria
+              </Form.Label>
+              <Form.Select name="category" onChange={handleChange} required>
+                <option value="Autos e peças">Autos e peças</option>
+                <option value="Para Casa">Para Casa</option>
+                <option value="Eletronicos e celulares">
+                  Eletronicos e celulares
+                </option>
+                <option value="Esporte e lazer">Esporte e lazer</option>
+                <option value="Moda e beleza">Moda e beleza</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Form.Group className="mb-3" controlId="formBasicProductDescription">
+          <Form.Label className="text-start text-muted fs-5">
+            Descrição do produto
+          </Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            name="description"
+            value={form.description}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Row>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 1
+            </Form.Label>
+            <Form.Control
+              name="image1"
+              value={imgsForm.image1}
+              onChange={handleChangeImage}
+            />
+          </Col>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 2
+            </Form.Label>
+            <Form.Control
+              name="image2"
+              value={imgsForm.image2}
+              onChange={handleChangeImage}
+            />
+          </Col>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 3
+            </Form.Label>
+            <Form.Control
+              name="image3"
+              value={imgsForm.image3}
+              onChange={handleChangeImage}
+            />
+          </Col>
+        </Row>
+
+        <Form.Group className="mb-3" controlId="formBasicSellerName">
+          <Form.Label className="text-start text-muted fs-5">
+            Nome do vendedor
+          </Form.Label>
+          <Form.Control
+            name="seller"
+            value={form.seller}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicProductSellerTel">
+          <Form.Label className="text-start text-muted fs-5">
+            Telefone do vendedor:
+          </Form.Label>
+          <Form.Control
+            name="tel_seller"
+            value={form.tel_seller}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicProductSellerEmail">
+          <Form.Label className="text-start text-muted fs-5">
+            Email do vendedor:
+          </Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="name@example.com"
+            name="email_seller"
+            value={form.email_seller}
+            onChange={handleChange}
+          />
+
+          <button onClick={() => setShowForm(!showForm)}>
+            Cancelar alterações no produto
+          </button>
+          <button type="submit" onClick={handleChangeImage}>
+            Salvar alterações
+          </button>
+        </Form.Group>
+      </Form>
+    </div>
   );
 }
 export default EditeForm;

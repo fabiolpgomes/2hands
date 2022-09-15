@@ -1,3 +1,4 @@
+import "./detailproduct.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -79,23 +80,9 @@ function DetailProduct() {
     }
   }
   return (
-    <div>
-      {showForm && loading === false && (
-        <EditeForm
-          form={form}
-          setForm={setForm}
-          productId={productId}
-          showForm={showForm}
-          setShowForm={setShowForm}
-        />
-      )}
-      {!showForm && (
-        <button onClick={() => setShowForm(!showForm)}>
-          Editar cadastro do produto
-        </button>
-      )}
+    <div className="DetailProduct container-lg">
       {loading === false && (
-        <div>
+        <div style={{ marginTop: "90px" }}>
           <img
             style={{ height: "200px" }}
             src={imagemAqui}
@@ -109,7 +96,7 @@ function DetailProduct() {
           </p>
           <p>{produto.description}</p>
           <p>
-            <strong>Preço: </strong> {produto.price} R$
+            <strong>Preço R$ </strong> {produto.price}
           </p>
           <div>
             <p>
@@ -123,10 +110,33 @@ function DetailProduct() {
             <p>
               <strong>Email do vendedor: </strong> {produto.email_seller}
             </p>
+
+            <p>
+              <strong>Categoria do Produtor: </strong> {produto.category}
+            </p>
+            <div>
+              <button className="delete" onClick={handleDelete}>
+                Deletar Produto
+              </button>
+
+              {showForm && loading === false && (
+                <EditeForm
+                  form={form}
+                  setForm={setForm}
+                  productId={productId}
+                  showForm={showForm}
+                  setShowForm={setShowForm}
+                />
+              )}
+              {!showForm && (
+                <button className="edit" onClick={() => setShowForm(!showForm)}>
+                  Editar cadastro do produto
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}
-      <button onClick={handleDelete}>Deletar Produto</button>
     </div>
   );
 }

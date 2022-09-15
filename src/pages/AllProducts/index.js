@@ -1,3 +1,4 @@
+import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -31,13 +32,21 @@ function AllProducts() {
   }
   return (
     <>
-      <div>
-        <label>Faça sua pesquisa de produtos</label>
+      <div container-lg
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          marginTop: "90px",
+          borderRadius: "5px"
+        }}
+      >
+        <label classeName="search ms-2">Pesquise nossos produtos</label>
         <input onChange={handleChange}></input>
       </div>
       <div>
-        <label>Selecione a categoria de produto</label>
-        <div>
+        <p ClasseName="category">Categoria de produto</p>
+        <div className="category-product">
           <button value="" onClick={handleClick}>
             Todas as categorias
           </button>
@@ -58,39 +67,45 @@ function AllProducts() {
           </button>
         </div>
       </div>
-      {itemsParaVenda
-        .filter((item) => {
-          return (
-            item.name.toLowerCase().includes(searchBar.toLowerCase()) &&
-            item.category.includes(categoria)
-          );
-        })
-        .map((item) => {
-          return (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link to={`/allProducts/${item._id}`}>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <img style={{ width: "20vh" }} src={item.img_url[0]} />
-                  <h4>{item.name}</h4>
-                  <p>
-                    <strong>Preço: </strong>
-                    {item.price}
-                  </p>
-                  <p>
-                    <strong>Categoria: </strong>
-                    {item.category}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          marginTop: "40px",
+          justifyContent: "center",
+        }}
+      >
+        {itemsParaVenda
+          .filter((item) => {
+            return (
+              item.name.toLowerCase().includes(searchBar.toLowerCase()) &&
+              item.category.includes(categoria)
+            );
+          })
+          .map((item) => {
+            return (
+              <div>
+                <Link to={`/allProducts/${item._id}`}>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <img style={{ width: "20vh" }} src={item.img_url[0]} />
+                    <h4>{item.name}</h4>
+                    <p>
+                      <strong>Preço: </strong>
+                      {item.price}
+                    </p>
+                    <p>
+                      <strong>Categoria: </strong>
+                      {item.category}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 }

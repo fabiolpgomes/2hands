@@ -1,10 +1,11 @@
+import "./create.product.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import twoHands1 from "../../assets/2Hands1.png";
 import twoHands2 from "../../assets/2Hands2.png";
 import twoHands3 from "../../assets/2Hands3.png";
 import { useNavigate } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Form, Col, Row, Button } from "react-bootstrap";
 
 function CreateProduct() {
   const navigate = useNavigate();
@@ -60,16 +61,62 @@ function CreateProduct() {
   console.log(imgsForm);
 
   return (
-    <div className="d-flex flex-column">
-      <h4 className="text-center">Desapega, Informe o seu produto</h4>
+    <div className="d-flex flex-column container-lg"
+    style={{
+          flexWrap: "wrap",
+          marginTop: "80px",
+        }}>
+      <h2 className="text-center"><strong>Desapega, anuncie o seu produto</strong></h2>
 
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicProductName">
-          <Form.Label className="text-start text-muted fs-5">
-            Nome do produto
-          </Form.Label>
-          <Form.Control name="name" value={form.name} onChange={handleChange} />
-        </Form.Group>
+        <Row>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Group className="mb-3" controlId="formBasicProductName">
+              <Form.Label className="text-start text-muted fs-5">
+                Nome do produto
+              </Form.Label>
+              <Form.Control
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+
+          <Col className="mb-1 col-2">
+            <Form.Group className="mb-2" controlId="formBasicProductPrice">
+              <Form.Label className="text-start text-muted fs-5">
+                Preço do produto
+              </Form.Label>
+              <Form.Control
+                name="price"
+                value={form.price}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+
+          <Col className="mb-1 col-3">
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicProductSellerEmail"
+            >
+              <Form.Label className="text-start text-muted fs-5 text-muted">
+                Categoria
+              </Form.Label>
+              <Form.Select name="category" onChange={handleChange} required>
+                <option>Categoria dos Produtos</option>
+                <option value="Autos e peças">Autos e peças</option>
+                <option value="Para Casa">Para Casa</option>
+                <option value="Eletronicos e celulares">
+                  Eletronicos e celulares
+                </option>
+                <option value="Esporte e lazer">Esporte e lazer</option>
+                <option value="Moda e beleza">Moda e beleza</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
 
         <Form.Group className="mb-3" controlId="formBasicProductDescription">
           <Form.Label className="text-start text-muted fs-5">
@@ -84,45 +131,38 @@ function CreateProduct() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicProductPrice">
-          <Form.Label className="text-start text-muted fs-5">
-            Preço do produto
-          </Form.Label>
-          <Form.Control
-            name="price"
-            value={form.price}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicProductImg">
-          <Form.Label className="text-start text-muted fs-5">
-            Insira foto 1
-          </Form.Label>
-          <Form.Control
-            name="image1"
-            value={imgsForm.image1}
-            onChange={imagesHandleChange}
-          />
-
-          <Form.Label className="text-start text-muted fs-5">
-            Insira foto 2
-          </Form.Label>
-          <Form.Control
-            name="image2"
-            value={imgsForm.image2}
-            onChange={imagesHandleChange}
-          />
-
-          <Form.Label className="text-start text-muted fs-5">
-            Insira foto 3
-          </Form.Label>
-          <Form.Control
-            name="image3"
-            value={imgsForm.image3}
-            onChange={imagesHandleChange}
-          />
-        </Form.Group>
+        <Row>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 1
+            </Form.Label>
+            <Form.Control
+              name="image1"
+              value={imgsForm.image1}
+              onChange={imagesHandleChange}
+            />
+          </Col>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 2
+            </Form.Label>
+            <Form.Control
+              name="image2"
+              value={imgsForm.image2}
+              onChange={imagesHandleChange}
+            />
+          </Col>
+          <Col className="mb-1 text-muted col-3">
+            <Form.Label className="text-start text-muted fs-5">
+              Insira foto 3
+            </Form.Label>
+            <Form.Control
+              name="image3"
+              value={imgsForm.image3}
+              onChange={imagesHandleChange}
+            />
+          </Col>
+        </Row>
 
         <Form.Group className="mb-3" controlId="formBasicSellerName">
           <Form.Label className="text-start text-muted fs-5">
@@ -157,29 +197,10 @@ function CreateProduct() {
             value={form.email_seller}
             onChange={handleChange}
           />
+          <button className="button-save mb-5" type="submit" onClick={imagesHandleChange}>
+            Incluir{" "}
+          </button>
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicProductSellerEmail">
-          <Form.Label className="text-start text-muted fs-5 text-muted">
-            Categoria
-          </Form.Label>
-          <Form.Select name="type" onChange={handleChange} required>
-            <option>Categoria dos Produtos</option>
-            <option value="Autos e pecas">Autos e pecas</option>
-            <option value="Autos e pecas">Autos e pecas</option>
-            <option value="Para casa">Para casa</option>
-            <option value="Eletronicos e celulares">
-              Eletronicos e celulares
-            </option>
-            <option value="Esporte e lazer">Esporte e lazer</option>
-            <option value="Moda e beleza">Moda e beleza</option>
-          </Form.Select>
-        </Form.Group>
-
-        <button type="submit" onClick={imagesHandleChange}>
-
-          Incluir
-        </button>
       </Form>
     </div>
   );

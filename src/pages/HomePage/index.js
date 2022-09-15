@@ -4,10 +4,7 @@ import { useState, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-
 function HomePage() {
-  const navigate = useNavigate();
   const [searchBar, setSearchBar] = useState("");
 
   function handleChange(e) {
@@ -22,7 +19,6 @@ function HomePage() {
   console.log(categoria);
   return (
     <>
-
       <label>Faça sua pesquisa de produtos</label>
       <input onChange={handleChange}></input>
       <Link to={`searchBar/${searchBar}`}>
