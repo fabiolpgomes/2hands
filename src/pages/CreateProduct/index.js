@@ -163,11 +163,10 @@ function CreateProduct() {
           <Form.Label className="text-start text-muted fs-5 text-muted">
             Categoria
           </Form.Label>
-          <Form.Select name="type" onChange={handleChange} required>
+          <Form.Select name="category" onChange={handleChange} required>
             <option>Categoria dos Produtos</option>
-            <option value="Autos e pecas">Autos e pecas</option>
-            <option value="Autos e pecas">Autos e pecas</option>
-            <option value="Para casa">Para casa</option>
+            <option value="Autos e peças">Autos e peças</option>
+            <option value="Para Casa">Para Casa</option>
             <option value="Eletronicos e celulares">
               Eletronicos e celulares
             </option>
@@ -177,7 +176,6 @@ function CreateProduct() {
         </Form.Group>
 
         <button type="submit" onClick={imagesHandleChange}>
-
           Incluir
         </button>
       </Form>
