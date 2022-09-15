@@ -36,15 +36,17 @@ function AllProducts() {
       container-lg
       style={{
         display: "flex",
-        flexDirection: "row",
         flexWrap: "wrap",
         marginTop: "90px",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div className="mt-4 ms-5">
-          <label>Pesquise nossos produtos</label>
-          <input onChange={handleChange}></input>
+          <label className="me-4">Pesquise nossos produtos</label>
+          <input
+            placeholder="O que você procura?"
+            onChange={handleChange}
+          ></input>
         </div>
 
         <div
