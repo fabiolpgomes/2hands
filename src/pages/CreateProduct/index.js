@@ -83,6 +83,7 @@ function CreateProduct() {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                maxlength="25"
               />
             </Form.Group>
           </Col>

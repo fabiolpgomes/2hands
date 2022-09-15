@@ -1,13 +1,17 @@
-.text-center{
-    color: #FFCA2C;
+.text-center {
+  color: #ffca2c;
+  background-color: #00285a;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 200px;
+  font-weight: bolder;
 }
 
-.button-save{
-    /* background-color:; */
-    text-align: center;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    margin:20px 200px;
-
+.button-save {
+  /* background-color:; */
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 200px;
 }
