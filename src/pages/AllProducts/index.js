@@ -42,9 +42,9 @@ function AllProducts() {
           marginTop: "90px",
         }}
       >
-        <div>
+        <div style={{ margin: "30px" }}>
           <label>Pesquise nossos produtos</label>
-          <input onChange={handleChange}></input>
+          <input style={{ margin: "10px" }} onChange={handleChange}></input>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
