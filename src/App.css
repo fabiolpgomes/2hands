@@ -55,9 +55,18 @@
 }
 .container .carousel {
   align-items: center;
-
   display: inline-flex;
   overflow: auto;
+}
+.card-body {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: inherit;
+  bottom: 0;
 }
 .buttons {
   text-align: center;
@@ -81,8 +90,6 @@
 .page-all-products {
   max-width: 40vh;
   min-width: 40vh;
-  display: flex;
-  flex-direction: row;
 }
 .page-all-products .all-products {
   display: flex;

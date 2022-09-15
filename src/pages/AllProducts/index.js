@@ -2,7 +2,7 @@ import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 function AllProducts() {
@@ -35,10 +35,9 @@ function AllProducts() {
   return (
     <>
       <div
-        container-lg
+        className="bisavo"
         style={{
           display: "flex",
-          flexDirection: "row",
           flexWrap: "wrap",
           marginTop: "90px",
         }}
@@ -91,20 +90,24 @@ function AllProducts() {
         </div>
 
         <div
+          className="divavo"
           style={{
             display: "flex",
             width: "100%",
-            flexDirection: "row",
-            flexWrap: "wrap",
+            //flexDirection: "row",
             marginTop: "40px",
-            justifyContent: "center",
           }}
         >
-          <div
-            className="page-all-products"
-            style={{ display: "flex", flexDirection: "row" }}
-          >
-            <Row className="all-products d-flex justify-content-evenly mt-4 ">
+          <div>
+            <div
+              className="DivPai"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+            >
               {itemsParaVenda
                 .filter((item) => {
                   return (
@@ -120,7 +123,6 @@ function AllProducts() {
                         height: "20rem",
                         width: "14rem",
                         margin: "20px",
-                        alignItems: "center",
                       }}
                       className="item-card"
                     >
@@ -146,7 +148,7 @@ function AllProducts() {
                     </Card>
                   );
                 })}
-            </Row>
+            </div>
           </div>
         </div>
       </div>

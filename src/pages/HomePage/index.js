@@ -11,7 +11,7 @@ function HomePage() {
         <Banner />
       </div>
 
-      <div style={{ marginTop: "160px", alignSelf: "center" }}>
+      <div style={{ marginTop: "180px", textAlign: "center" }}>
         <Link style={{ margin: "auto" }} to="/allProducts">
           <Button size="lg">Conferir os produtos disponíveis</Button>
         </Link>
