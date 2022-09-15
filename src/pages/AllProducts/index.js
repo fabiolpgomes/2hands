@@ -90,6 +90,8 @@ function AllProducts() {
                 })
                 .map((item) => {
                   return (
+
+
                     <div className="item-card">
                       <Link to={`/allProducts/${item._id}`}>
                         <Card
@@ -111,6 +113,8 @@ function AllProducts() {
                         </Card>
                       </Link>
                     </div>
+
+                    
                   );
                 })}
             </div>
