@@ -29,27 +29,6 @@ function CardsCarrosel() {
   }
   console.log(itemsParaVenda);
   return (
-<<<<<<< HEAD
-    <div className="container">
-      <div className="carousel" ref={carrousel}>
-        {itemsParaVenda.map((item) => {
-          return (
-            <div
-              className="item card m-1"
-              style={{ width: "100rem", height: "60rem" }}
-              key={item._id}
-            >
-              <img
-                src={item.img_url[0]}
-                alt="produto"
-                className="card-img-top"
-                style={{ minHeight: "10rem" }}
-              />
-
-              <Link
-                to={`/allProducts/${item._id}`}
-                className="text-reset text-decoration-none"
-=======
     <div>
       <div className="container teste" ref={carrousel}>
         <div className="carousel teste">
@@ -59,19 +38,22 @@ function CardsCarrosel() {
                 className="card m-1 "
                 style={{ width: "14rem", height: "25rem" }}
                 key={item._id}
->>>>>>> ec2f4869f5396b987404c01b6aedeccb1e6c2601
               >
-                <img
-                  src={item.img_url[0]}
-                  alt="produto"
-                  className="card-img-top"
-                  style={{ minHeight: "9rem", minWidth: "6rem" }}
-                />
-
                 <Link
                   to={`/allProducts/${item._id}`}
                   className="text-reset text-decoration-none"
                 >
+                  <img
+                    src={item.img_url[0]}
+                    alt="produto"
+                    className="card-img-top"
+                    style={{
+                      minHeight: "9rem",
+                      minWidth: "6rem",
+                      maxHeight: "20rem",
+                      maxWidth: "12rem",
+                    }}
+                  />
                   <div className="card-body">
                     <div className="card-title">{item.name}</div>
                     <div className="card-text text-muted">R$ {item.price}</div>
@@ -82,14 +64,14 @@ function CardsCarrosel() {
           })}
         </div>
       </div>
-        <div className="buttons">
-          <button onClick={hadleLeftClick}>
-            <img src={seta} alt="imagem" />
-          </button>
-          <button onClick={handleRightClick}>
-            <img src={seta} alt="imagem" />
-          </button>
-        </div>
+      <div style={{ marginBottom: "100px" }} className="buttons">
+        <button onClick={hadleLeftClick}>
+          <img src={seta} alt="imagem" />
+        </button>
+        <button onClick={handleRightClick}>
+          <img src={seta} alt="imagem" />
+        </button>
+      </div>
     </div>
   );
 }

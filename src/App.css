@@ -49,7 +49,7 @@
 }
 .container {
   padding: 19px;
-  margin: 40px;
+  margin-top: 40px;
   scroll-behavior: smooth;
   align-items: center;
 }
@@ -64,7 +64,6 @@
 }
 
 .container .buttons {
-  margin: auto;
   width: 100%;
   text-align: center;
 }
@@ -82,7 +81,6 @@
 .page-all-products {
   max-width: 40vh;
   min-width: 40vh;
-  margin: 40px;
   display: flex;
   flex-direction: row;
 }
