@@ -9,7 +9,6 @@
   font-size: small;
   letter-spacing: 2px;
   overflow: hidden;
-
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -49,32 +48,32 @@
   }
 }
 .container {
-  padding: 300px;
-  width: 900px;
+  padding: 19px;
   margin: 40px;
+  scroll-behavior: smooth;
+  align-items: center;
 }
 .container .carousel {
   align-items: center;
-  display: flex;
-  flex: content;
-  scroll-behavior: smooth;
-  flex-basis: 40px;
+
+  display: inline-flex;
+  overflow: auto;
 }
-.container .carousel .item {
-  width: 200px;
-  flex-basis: 300px;
-  flex-shrink: unset;
+.buttons {
+  text-align: center;
 }
+
 .container .buttons {
+  margin: auto;
   width: 100%;
   text-align: center;
 }
 
-.container .buttons button {
+.buttons button {
   background-color: transparent;
   border: none;
 }
-.container .buttons button:first-child img {
+.buttons button:first-child img {
   transform: rotate(180deg);
 }
 .item-card {
@@ -96,4 +95,10 @@
 .page-all-products .all-products .item-card {
   display: flex;
   width: 300px;
+}
+
+.teste {
+  overflow: scroll;
+  overflow-y: hidden; /* Hide horizontal scrollbar */
+  overflow-x: scroll; /* Add vertical scrollbar */
 }
