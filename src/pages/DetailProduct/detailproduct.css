@@ -1,0 +1,25 @@
+.DetailProduct {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-details-products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+    background-color: #ffca2c;
+    font-weight: 100;
+    border-radius: 8px;
+    
+}
+
+.delete {
+  background-color: red;
+  font-weight: 100;
+  border-radius: 8px;
+} 

@@ -1,4 +1,4 @@
-import logo from "../../assets/2Hands2.png";
+import logo from "../../assets/2HandsLogo.png";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "./style.module.css";
@@ -10,7 +10,7 @@ export function Navbar() {
         <nav className={styles.navbar2}>
           <Col className="col-3">
             <Link to="/">
-              <img 
+              <img
                 src={logo}
                 alt="logo"
                 style={{ margin: "20px", width: "80px" }}

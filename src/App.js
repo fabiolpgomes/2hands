@@ -19,7 +19,7 @@ function App() {
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/allProducts/:productId" element={<DetailProduct />} />
       </Routes>
-      <footer className="footer" responsive="sm">
+      <footer className="footer" margin-top="5px" responsive="sm">
         Desenvolvido por Bruno Apostolo e Fabio Gomes @2022
       </footer>
     </div>

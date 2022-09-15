@@ -7,4 +7,7 @@
   align-items: center;
   background-color: #00285a;
   margin-bottom: 15px;
+  width: 100%;
+  position: fixed;
+  text-align: center;
 }

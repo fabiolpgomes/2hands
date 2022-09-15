@@ -1,0 +1,13 @@
+.text-center{
+    color: #FFCA2C;
+}
+
+.button-save{
+    background-color: rgb(173, 255, 47);
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin:20px 200px;
+
+}

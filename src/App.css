@@ -1,14 +1,7 @@
-/* .App {
-  text-align: center;
-  background-color: rgb(232, 138, 16);
-} */
+.App {
+ 
+}
 
-/* .navbar {
-  height: 80px;
-  background-color: #00285a;
-  color: white;
-  margin-bottom: 10px;
-} */
 
 .footer {
   height: 25px;
@@ -17,6 +10,7 @@
   text-align: center;
   font-size: small;
   letter-spacing: 2px;
+  overflow: hidden;
 
   position: fixed;
   bottom: 0;
