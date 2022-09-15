@@ -200,18 +200,16 @@ function CreateProduct() {
             value={form.email_seller}
             onChange={handleChange}
           />
-          <button
+          <Button
+            variant="success"
+            size="lg"
             className="button-save mb-5"
             type="submit"
             onClick={imagesHandleChange}
           >
-            Incluir{" "}
-          </button>
+            Incluir
+          </Button>
         </Form.Group>
-
-        <button type="submit" onClick={imagesHandleChange}>
-          Incluir
-        </button>
       </Form>
     </div>
   );

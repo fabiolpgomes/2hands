@@ -17,7 +17,6 @@ export function Navbar() {
               />
             </Link>
           </Col>
-
           <Col className="col-2">
             <Link to="/CreateProduct">
               <Button variant="warning" onClick="CreateProduct">
