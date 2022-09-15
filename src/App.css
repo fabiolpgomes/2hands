@@ -49,61 +49,21 @@
   }
 }
 .container {
-  padding: 19px;
-  width: 100vh;
+  padding: 300px;
+  width: 900px;
   margin: 40px;
 }
 .container .carousel {
   align-items: center;
   display: flex;
-  overflow: auto;
+  flex: content;
   scroll-behavior: smooth;
+  flex-basis: 40px;
 }
 .container .carousel .item {
-  margin-left: 3px;
-  border: 2px solid black;
-  border-radius: 18px;
-  width: 270px;
-  flex: none;
-}
-
-.container .carousel .item .image {
-  align-items: center;
-  height: 200px;
   width: 200px;
-}
-.container .carousel .item .image img {
-  align-items: center;
-
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-}
-.container .carousel .item .info {
-  height: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.container .carousel .item .info span {
-  display: block;
-  text-align: center;
-  padding: 5px;
-  border-radius: 10px;
-  color: black;
-  text-decoration: none;
-}
-.info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: larger;
-}
-.info .name {
-  font-weight: bolder;
-  font-size: 25px;
-  text-justify: distribute-all-lines;
+  flex-basis: 300px;
+  flex-shrink: unset;
 }
 .container .buttons {
   width: 100%;

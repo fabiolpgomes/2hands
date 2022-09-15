@@ -34,8 +34,8 @@ function CardsCarrosel() {
         {itemsParaVenda.map((item) => {
           return (
             <div
-              className="card m-1 "
-              style={{ width: "20rem", height: "25rem" }}
+              className="item card m-1"
+              style={{ width: "100rem", height: "60rem" }}
               key={item._id}
             >
               <img
