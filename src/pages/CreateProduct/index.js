@@ -61,12 +61,16 @@ function CreateProduct() {
   console.log(imgsForm);
 
   return (
-    <div className="d-flex flex-column container-lg"
-    style={{
-          flexWrap: "wrap",
-          marginTop: "80px",
-        }}>
-      <h2 className="text-center"><strong>Desapega, anuncie o seu produto</strong></h2>
+    <div
+      className="d-flex flex-column container-lg"
+      style={{
+        flexWrap: "wrap",
+        marginTop: "80px",
+      }}
+    >
+      <h2 className="text-center">
+        <strong>Desapega, anuncie o seu produto</strong>
+      </h2>
 
       <Form onSubmit={handleSubmit}>
         <Row>
@@ -95,8 +99,7 @@ function CreateProduct() {
               />
             </Form.Group>
           </Col>
-
-          <Col className="mb-1 col-3">
+          <Col>
             <Form.Group
               className="mb-3"
               controlId="formBasicProductSellerEmail"
@@ -197,33 +200,18 @@ function CreateProduct() {
             value={form.email_seller}
             onChange={handleChange}
           />
-          <button className="button-save mb-5" type="submit" onClick={imagesHandleChange}>
+          <button
+            className="button-save mb-5"
+            type="submit"
+            onClick={imagesHandleChange}
+          >
             Incluir{" "}
           </button>
-        </Form.Group>
-<<<<<<< HEAD
-=======
-
-        <Form.Group className="mb-3" controlId="formBasicProductSellerEmail">
-          <Form.Label className="text-start text-muted fs-5 text-muted">
-            Categoria
-          </Form.Label>
-          <Form.Select name="category" onChange={handleChange} required>
-            <option>Categoria dos Produtos</option>
-            <option value="Autos e peças">Autos e peças</option>
-            <option value="Para Casa">Para Casa</option>
-            <option value="Eletronicos e celulares">
-              Eletronicos e celulares
-            </option>
-            <option value="Esporte e lazer">Esporte e lazer</option>
-            <option value="Moda e beleza">Moda e beleza</option>
-          </Form.Select>
         </Form.Group>
 
         <button type="submit" onClick={imagesHandleChange}>
           Incluir
         </button>
->>>>>>> 29f4e865d42a2611da658e0000ba0bd5489866db
       </Form>
     </div>
   );
