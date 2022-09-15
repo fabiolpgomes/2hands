@@ -50,7 +50,7 @@
 }
 .container {
   padding: 19px;
-  max-width: 90vh;
+  width: 100vh;
   margin: 40px;
 }
 .container .carousel {
