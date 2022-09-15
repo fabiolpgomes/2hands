@@ -1,7 +1,11 @@
 .App {
- 
 }
 
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
 
 .footer {
   height: 25px;
@@ -52,7 +56,7 @@
 }
 .container {
   padding: 19px;
-  max-width: 90vh;
+  width: 100vh;
   margin: 40px;
 }
 .container .carousel {

@@ -33,14 +33,25 @@ function CardsCarrosel() {
       <div className="carousel" ref={carrousel}>
         {itemsParaVenda.map((item) => {
           return (
-            <div className="item" key={item._id}>
-              <div className="image">
-                <img src={item.img_url[0]} alt="produto" />
-              </div>
-              <Link to={`/allProducts/${item._id}`}>
-                <div className="info">
-                  <span className="name">{item.name}</span>
-                  <span className="price">R$ {item.price}</span>
+            <div
+              className="card m-1 "
+              style={{ width: "20rem", height: "25rem" }}
+              key={item._id}
+            >
+              <img
+                src={item.img_url[0]}
+                alt="produto"
+                className="card-img-top"
+                style={{ minHeight: "10rem" }}
+              />
+
+              <Link
+                to={`/allProducts/${item._id}`}
+                className="text-reset text-decoration-none"
+              >
+                <div className="card-body">
+                  <div className="card-title">{item.name}</div>
+                  <div className="card-text text-muted">R$ {item.price}</div>
                 </div>
               </Link>
             </div>
