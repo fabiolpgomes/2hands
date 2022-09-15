@@ -60,10 +60,10 @@ function CardsCarrosel() {
       </div>
       <div className="buttons">
         <button onClick={hadleLeftClick}>
-          <img src={seta} />
+          <img src={seta} alt="imagem" />
         </button>
         <button onClick={handleRightClick}>
-          <img src={seta} />
+          <img src={seta} alt="imagem" />
         </button>
       </div>
     </div>

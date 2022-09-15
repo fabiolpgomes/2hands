@@ -1,6 +1,6 @@
 import "./create.product.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import twoHands1 from "../../assets/2Hands1.png";
 import twoHands2 from "../../assets/2Hands2.png";
 import twoHands3 from "../../assets/2Hands3.png";
