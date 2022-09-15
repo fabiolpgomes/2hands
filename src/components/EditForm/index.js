@@ -65,6 +65,7 @@ function EditeForm({
               <Form.Control
                 name="name"
                 value={form.name}
+                maxlength="25"
                 onChange={handleChange}
               />
             </Form.Group>
