@@ -2,7 +2,7 @@ import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 function AllProducts() {
@@ -78,6 +78,7 @@ function AllProducts() {
           justifyContent: "center",
         }}
       >
+
         <div className="page-all-products">
           <div className="all-products">
             {itemsParaVenda
@@ -117,6 +118,7 @@ function AllProducts() {
                   </div>
                 );
               })}
+
           </div>
         </div>
       </div>
