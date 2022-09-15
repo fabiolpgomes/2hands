@@ -200,6 +200,7 @@ function CreateProduct() {
             value={form.email_seller}
             onChange={handleChange}
           />
+
           <Button
             variant="success"
             size="lg"
@@ -210,6 +211,7 @@ function CreateProduct() {
             Incluir
           </Button>
         </Form.Group>
+          
       </Form>
     </div>
   );
