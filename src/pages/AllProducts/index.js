@@ -2,7 +2,7 @@ import "./allproducts.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 function AllProducts() {
@@ -69,18 +69,81 @@ function AllProducts() {
       </div>
 
       <div
+        className="bisavo"
         style={{
           display: "flex",
-          width: "100%",
-          flexDirection: "row",
+
           flexWrap: "wrap",
           marginTop: "40px",
           justifyContent: "center",
         }}
       >
+        <div style={{ margin: "30px" }}>
+          <label>Pesquise nossos produtos</label>
+          <input style={{ margin: "10px" }} onChange={handleChange}></input>
+        </div>
 
-        <div className="page-all-products">
-          <div className="all-products">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Button
+            className="ms-3 me-3 mt-4"
+            variant="success"
+            value=""
+            onClick={handleClick}
+          >
+            Todas as categorias
+          </Button>
+          <Button
+            className="me-3 mt-4"
+            value="Autos e peças"
+            onClick={handleClick}
+          >
+            Autos e peças
+          </Button>
+          <Button className="me-3 mt-4" value="Para Casa" onClick={handleClick}>
+            Para casa
+          </Button>
+          <Button
+            className="me-3 mt-4"
+            value="Eletronicos e celulares"
+            onClick={handleClick}
+          >
+            Eletronicos e celulares
+          </Button>
+          <Button
+            className="me-3 mt-4"
+            value="Esporte e lazer"
+            onClick={handleClick}
+          >
+            Esporte e lazer
+          </Button>
+          <Button
+            className="me-3 mt-4"
+            value="Moda e beleza"
+            onClick={handleClick}
+          >
+            Moda e beleza
+          </Button>
+        </div>
+
+        <div
+          className="divavo"
+          style={{
+            display: "flex",
+            width: "100%",
+            //flexDirection: "row",
+            marginTop: "40px",
+          }}
+        >
+          <div>
+            <div
+              className="DivPai"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+            >
             {itemsParaVenda
               .filter((item) => {
                 return (
