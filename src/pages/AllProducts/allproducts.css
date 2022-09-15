@@ -1,9 +1,30 @@
+/*
 .category-product{
     text-align: center;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
     margin:20px 250px 50px 90px;
     border-radius: 10px;
 }
+*/
+
+.search-label{
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+
+
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/}
