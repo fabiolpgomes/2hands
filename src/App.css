@@ -111,3 +111,6 @@
   align-self: center;
   bottom: 0;
 }
+.card-img-top {
+  margin: 0;
+}
