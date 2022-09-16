@@ -29,14 +29,14 @@ function CardsCarrosel() {
   }
   console.log(itemsParaVenda);
   return (
-    <div>
+    <div className="tudojunto">
       <div className="container teste" ref={carrousel}>
         <div className="carousel teste">
           {itemsParaVenda.map((item) => {
             return (
               <div
-                className="card m-1 "
-                style={{ width: "14rem", height: "25rem" }}
+                className="card m-1 cartaozinho"
+                style={{ width: "14rem", height: "25rem", display: "table" }}
                 key={item._id}
               >
                 <Link
@@ -54,7 +54,7 @@ function CardsCarrosel() {
                       maxWidth: "12rem",
                     }}
                   />
-                  <div className="card-body">
+                  <div className="card-body cartaozinho">
                     <div className="card-title">{item.name}</div>
                     <div className="card-text text-muted">R$ {item.price}</div>
                   </div>

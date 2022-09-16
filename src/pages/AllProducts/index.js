@@ -35,9 +35,9 @@ function AllProducts() {
     <div
       container-lg
       style={{
-        display: "flex",
         flexWrap: "wrap",
         marginTop: "90px",
+        marginBottom: "50px",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -52,52 +52,43 @@ function AllProducts() {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-evenly",
             textAlign: "center",
           }}
         >
           <Button
-            className="ms-5 mt-5"
+            className="mt-5"
             variant="success"
             value=""
             onClick={handleClick}
           >
             Todas as categorias
           </Button>
-          <Button
-            className="ms-3 mt-5"
-            value="Autos e peças"
-            onClick={handleClick}
-          >
+          <Button className=" mt-5" value="Autos e peças" onClick={handleClick}>
             Autos e peças
           </Button>
-          <Button className="ms-3 mt-5" value="Para Casa" onClick={handleClick}>
+          <Button className="mt-5" value="Para Casa" onClick={handleClick}>
             Para casa
           </Button>
           <Button
-            className="ms-3 mt-5"
+            className="mt-5"
             value="Eletronicos e celulares"
             onClick={handleClick}
           >
             Eletronicos e celulares
           </Button>
           <Button
-            className="ms-3 mt-5"
+            className="mt-5"
             value="Esporte e lazer"
             onClick={handleClick}
           >
             Esporte e lazer
           </Button>
-          <Button
-            className="ms-3 mt-5"
-            value="Moda e beleza"
-            onClick={handleClick}
-          >
+          <Button className="mt-5" value="Moda e beleza" onClick={handleClick}>
             Moda e beleza
           </Button>
         </div>
       </div>
-
       <div
         className="bisavo"
         style={{
@@ -113,7 +104,6 @@ function AllProducts() {
           style={{
             display: "flex",
             width: "100%",
-            //flexDirection: "row",
             marginTop: "40px",
           }}
         >
@@ -137,8 +127,11 @@ function AllProducts() {
                 .map((item) => {
                   return (
                     <div
-                      className="card m-1"
-                      style={{ width: "14rem", minheight: "25rem" }}
+                      className="card m-3"
+                      style={{
+                        width: "14rem",
+                        height: "25rem",
+                      }}
                       key={item._id}
                     >
                       <Link
@@ -149,15 +142,19 @@ function AllProducts() {
                           src={item.img_url[0]}
                           alt="produto"
                           className="card-img-top"
-                          style={{ minHeight: "9rem", minWidth: "6rem" }}
+                          style={{
+                            minHeight: "9rem",
+                            minWidth: "6rem",
+                            maxHeight: "16rem",
+                          }}
                         />
 
-                        <div className="card-body">
+                        <div className="card-body cartaozinho">
                           <div className="card-title">
-                            <strong>{item.name}</strong>
+                            <strong className="oque-e-dois">{item.name}</strong>
                           </div>
                           <div className="card-text text-muted">
-                            <strong>R$ {item.price}</strong>
+                            <strong className="oque-e">R$ {item.price}</strong>
                           </div>
                         </div>
                       </Link>
