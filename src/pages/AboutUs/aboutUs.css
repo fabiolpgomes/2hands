@@ -1,0 +1,31 @@
+
+*{
+    margin-left: 15px;
+}
+
+.about {
+  margin-top: 130px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-left: 25px;
+}
+
+.header {
+    padding: 0 0 35px 0;
+    background-color: #00285a;
+    margin-left: 5px;
+    }
+  
+  .header-2 {
+    margin: 0 auto;
+    background-color: #00285a;
+    color: #f4f4f4;
+    margin-top: 2px;
+    font-family: Helvetica, sans-serif;
+    }
+
+    h3 {
+      color:aqua
+    }
