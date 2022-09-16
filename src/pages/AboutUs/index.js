@@ -9,25 +9,27 @@ function AboutUs() {
 
           <p>
             A 2Hands surgiu para atender as diretrizes do projeto nº 2, conforme
-            os requisitos do BootCamp da IronHack. </p>
-            
-            <p>
-            Desenvolvimento do aplicativo da Web.
-            </p>
-            <p>
-            Implementar todas as ações CRUD na aplicacao, Criar, ler, atualizar
-            e excluir recursos, mesmo que não sejam todos para o mesmo modelo.
-            </p>
-        
+            os requisitos do BootCamp da IronHack.
+          </p>
+
+          <p>
+            2HANDS é uma plataforma online de venda de produtos em segunda mão
+            criada por desenvolvedores juniors.
+          </p>
+          <p>
+            Aplicação contempla todas as ações CRUD: Criar, Ler, Atualizar e
+            Excluír registro consumidos por uma API.
+          </p>
+
           <p>
             Projeto desenvolvido em parceria entre Fabio Gomes e Bruno Apostolo,
             unindo os conhecimentos adquiridos e muito suor na resolucao dos por
             menores.
           </p>
-          
+
           <p>
-            Decidimos por criar um Markplace de venda de produtos de Segunda
-            mao. 
+            Este projeto que tem como objetivo promover a economia circular
+            através do prolongamento do ciclo de utilização dos produtos.
           </p>
           <hr />
 
@@ -48,8 +50,11 @@ function AboutUs() {
             mercado de usados brasileiro conquistou 33 milhões de novos
             consumidores apenas em 2020.
           </p>
+          <p>
+            Convidamos a todos a apoiar esta idéia, "Estimular o reuso de
+            produtos até o limite das possibilidade".
+          </p>
           <br />
-
         </div>
       </div>
     </div>
