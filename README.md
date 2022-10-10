@@ -2,7 +2,7 @@
 
 2Hands was created to meet the guidelines of project #2 as per IronHack's BootCamp requirements.
 
-Web application development.
+Web application development,  Express app. 
 
 Implement all CRUD actions in the application, create, read, update and delete resources, even if they are not all for the same model.
 
